@@ -43,7 +43,7 @@ public class MessageService {
     private ReplyKeyboard generateMarkup() {
         InlineKeyboardButton button = new InlineKeyboardButton();
         button.setText("Jizzax yoshlari / rasmiy kanal \uD83C\uDDFA\uD83C\uDDFF");
-        button.setUrl("https://t.me/mychannelforbotapplication");
+        button.setUrl("https://t.me/JizzaxYI");
         List<InlineKeyboardButton> row = new ArrayList<>();
         row.add(button);
 

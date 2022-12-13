@@ -40,17 +40,17 @@ public class TelegramBot extends SpringWebhookBot {
     @Override
     public BotApiMethod<?> onWebhookUpdateReceived(Update update) {
         GetChatMember getChatMember = new GetChatMember();
-        getChatMember.setChatId("-1001760365278");
+        getChatMember.setChatId("-1001343033207");
+
         if (update.hasCallbackQuery()) {
             CallbackQuery callbackQuery = update.getCallbackQuery();
             Long id = callbackQuery.getFrom().getId();
             getChatMember.setUserId(id);
-        }else {
+        }else if (update.hasMessage()){
             getChatMember.setUserId(update.getMessage().getFrom().getId());
         }
 
         ChatMember chatMember = execute(getChatMember);
-
 
         return telegramFacade.handleUpdate(update,chatMember);
     }
